@@ -655,6 +655,12 @@ body {
 /* Mobile and Tablet view adjustments (screens below 768px) */
 @media (max-width: 768px) {
     
+    /* Increase scroll margin offset for mobile because the stacked nav is taller */
+    section[id],
+    .two-column-layout[id] {
+        scroll-margin-top: 150px;
+    }
+
     /* Reduce Hero font sizing */
     .hero-name {
         font-size: 2.5rem;
@@ -670,21 +676,26 @@ body {
         align-items: center;
     }
     
-    /* Collapse and wrap Sticky Navbar */
+    /* Collapse and wrap Sticky Navbar - more compact for mobile */
     .nav-container {
         flex-direction: column;
-        gap: 10px;
-        padding: 12px 15px;
+        gap: 6px;
+        padding: 8px 12px;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
     }
     
     .nav-links {
-        gap: 15px;
+        column-gap: 12px;
+        row-gap: 6px;
         flex-wrap: wrap;
         justify-content: center;
     }
     
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     /* Stack layout cards vertically */
